@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:autofillHints="Age"
-        android:hint="@string/age"
+        android:hint="@string/roll"
 
         android:inputType="number"
         android:textColorHint="#78909C"
