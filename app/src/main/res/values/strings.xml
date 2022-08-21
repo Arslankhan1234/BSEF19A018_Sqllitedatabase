@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Student_Database</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+
+    <string name="add">Add value</string>
+    <string name="view">View All</string>
+</resources>
