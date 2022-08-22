@@ -1,9 +1,10 @@
-package Models;
+package com.example.student_database;
 
 public class Student {
 
     private String name;
     private int rollNmber;
+    private boolean isEnroll;
 
 
     public Student(String name, int rollNmber) {
@@ -27,6 +28,13 @@ public class Student {
 
     public void setRollNmber(int rollNmber) {
         this.rollNmber = rollNmber;
+    }
+    public boolean isEnroll() {
+        return isEnroll;
+    }
+
+    public void setEnroll(boolean enroll) {
+        isEnroll = enroll;
     }
 
 

@@ -1,5 +1,6 @@
 package com.example.student_database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -22,7 +23,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         String studenttable = "CREATE TABLE " + STUDENT_TABLE + "(" +
                 STUDENT_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + STUDENT_NAME + " Text, "
-                + STUDENT_ROLL + " Int"+ ") ";
+                + STUDENT_ROLL + " Int, " + STUDENT_ENROLL + " BOOL) ";
         db.execSQL(studenttable);
 
     }
@@ -31,5 +32,22 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + STUDENT_TABLE);
         onCreate(db);
+    }
+
+
+    public void  addStudent(Student STUDENTModel){
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Hash map, as we did in bundles
+        ContentValues cv = new ContentValues();
+
+        cv.put(STUDENT_NAME,STUDENTModel.getName());
+        cv.put(STUDENT_ROLL, STUDENTModel.getRollNmber());
+        cv.put(STUDENT_ENROLL, STUDENTModel.isEnroll());
+        db.insert(STUDENT_TABLE, null, cv);
+        db.close();
+        //NullCoumnHack
+        //long insert =
+        //if (insert == -1) { return false; }
+        //else{return true;}
     }
 }
