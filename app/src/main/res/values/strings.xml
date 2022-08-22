@@ -5,4 +5,5 @@
 
     <string name="add">Add value</string>
     <string name="view">View All</string>
+    <string name="activestudent">Active Customer</string>
 </resources>
