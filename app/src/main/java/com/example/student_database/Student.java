@@ -7,7 +7,7 @@ public class Student {
     private boolean isEnroll;
 
 
-    public Student(String name, int rollNmber) {
+    public Student(String name, int rollNmber, boolean b) {
         this.name = name;
         this.rollNmber = rollNmber;
 
