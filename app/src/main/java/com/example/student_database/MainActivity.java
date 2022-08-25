@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,6 +55,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DbHelper dbHelper = new DbHelper(MainActivity.this);
+                List<Student> list = dbHelper.getAllStudents();
+
+//                ArrayAdapter arrayAdapter = new ArrayAdapter<Student>
+//                        (MainActivity.this, R.layout.activity_customlistview,list);
+
+                MyAdapter myAdapter=new MyAdapter(MainActivity.this,list);
+                listViewStudent.setAdapter(myAdapter);
+
+
+            }
+        });
 
     }
+
 }
